@@ -22,7 +22,19 @@
     </script>
 
   
-
+    <script>
+      function getCORS(url, success) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.onload = success;
+        xhr.send();
+        return xhr;
+      }
+      getCORS('http://www.rowlandrose.com/experiments/angular2-reddit-base/', function(request){
+        var response = request.currentTarget.response || request.target.responseText;
+        console.log(response);
+      });
+    </script>
 
 
 </body>
