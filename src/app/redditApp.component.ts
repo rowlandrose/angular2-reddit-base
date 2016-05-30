@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'reddit',
   templateUrl: 'redditApp.component.html',
   styleUrls: ['redditApp.component.css'],
-  directives: [ArticleComponent]
+  directives: [Article]
 })
 export class redditApp {
 	
