@@ -23,7 +23,8 @@ var Article = (function () {
             styleUrls: ['article.component.css'],
             host: {
                 class: 'row'
-            }
+            },
+            directives: [Article]
         }), 
         __metadata('design:paramtypes', [String, String, Number])
     ], Article);

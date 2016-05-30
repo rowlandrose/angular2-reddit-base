@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['article.component.css'],
   host: {
     class: 'row'
-  }
+  },
+  directives: [Article]
 })
 class Article {
   title: string;
