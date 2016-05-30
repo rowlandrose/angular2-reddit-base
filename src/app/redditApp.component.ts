@@ -6,7 +6,7 @@ import { ArticleComponent } from './article/article.component';
   selector: 'reddit',
   templateUrl: 'redditApp.component.html',
   styleUrls: ['redditApp.component.css'],
-  directives: [ArticleComponent]
+  directives: [ArticleComponent] 
 })
 export class redditApp {
 	
