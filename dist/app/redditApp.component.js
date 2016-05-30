@@ -9,34 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ArticleComponent = (function () {
-    function ArticleComponent() {
-        this.title = 'Angular 2';
-        this.link = 'http://angular.io';
-        this.votes = 10;
+var article_component_1 = require('./article/article.component');
+var redditApp = (function () {
+    function redditApp() {
     }
-    ArticleComponent.prototype.ngOnInit = function () { };
-    ArticleComponent.prototype.voteUp = function () {
-        this.votes += 1;
-        return false;
+    redditApp.prototype.addArticle = function (title, link) {
+        console.log("Adding article title: " + title.value + " and link: " + link.value);
     };
-    ArticleComponent.prototype.voteDown = function () {
-        this.votes -= 1;
-        return false;
-    };
-    ArticleComponent = __decorate([
+    redditApp = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'reddit-article',
-            templateUrl: 'article.component.html',
-            styleUrls: ['article.component.css'],
-            host: {
-                class: 'row'
-            }
+            selector: 'reddit',
+            templateUrl: 'redditApp.component.html',
+            styleUrls: ['redditApp.component.css'],
+            directives: [article_component_1.ArticleComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], ArticleComponent);
-    return ArticleComponent;
+    ], redditApp);
+    return redditApp;
 }());
-exports.ArticleComponent = ArticleComponent;
-//# sourceMappingURL=article.component.js.map
+exports.redditApp = redditApp;
+//# sourceMappingURL=redditApp.component.js.map

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { ArticleComponent } from './article/article.component';
 
 @Component({
   moduleId: module.id,
   selector: 'reddit',
   templateUrl: 'redditApp.component.html',
   styleUrls: ['redditApp.component.css'],
-  directives: [Article]
+  directives: [ArticleComponent]
 })
 export class redditApp {
 	
