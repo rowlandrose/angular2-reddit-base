@@ -26,10 +26,12 @@ export class ArticleComponent implements OnInit {
   article:Article;
 
   constructor() {
-    this.article = new Article('Angular 2', 'http://angular.io', 10);
+    
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.article = new Article('Angular 2', 'http://angular.io', 10);
+  }
 
   voteUp() {
     this.article.votes += 1;

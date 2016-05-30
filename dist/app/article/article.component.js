@@ -19,9 +19,10 @@ var Article = (function () {
 }());
 var ArticleComponent = (function () {
     function ArticleComponent() {
-        this.article = new Article('Angular 2', 'http://angular.io', 10);
     }
-    ArticleComponent.prototype.ngOnInit = function () { };
+    ArticleComponent.prototype.ngOnInit = function () {
+        this.article = new Article('Angular 2', 'http://angular.io', 10);
+    };
     ArticleComponent.prototype.voteUp = function () {
         this.article.votes += 1;
         return false;
