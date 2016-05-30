@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class Angular2RedditBaseAppComponent {
   title = 'angular2-reddit-base works!';
+  names = ['Rowland', 'Lauren', 'Gianna', 'Eli', 'Jack'];
 }

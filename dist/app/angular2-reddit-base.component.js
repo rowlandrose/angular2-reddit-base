@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var Angular2RedditBaseAppComponent = (function () {
     function Angular2RedditBaseAppComponent() {
         this.title = 'angular2-reddit-base works!';
+        this.names = ['Rowland', 'Lauren', 'Gianna', 'Eli', 'Jack'];
     }
     Angular2RedditBaseAppComponent = __decorate([
         core_1.Component({
