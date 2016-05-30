@@ -6,8 +6,4 @@ if (environment.production) {
   enableProdMode();
 }
 
-export class main {
-  loading_text = 'Loading!!!';
-}
-
 bootstrap(redditApp);
