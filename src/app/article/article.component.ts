@@ -7,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['article.component.css'],
   host: {
     class: 'row'
-  },
-  directives: [Article]
+  }
 })
-class Article {
+class ArticleInner {
   title: string;
   link: string;
   votes: number;
@@ -23,10 +22,10 @@ class Article {
 }
 export class ArticleComponent implements OnInit {
 
-  article:Article;
+  article:ArticleInner;
 
   constructor() {
-    this.article = new Article('Angular 2', 'http://angular.io', 10);
+    this.article = new ArticleInner('Angular 2', 'http://angular.io', 10);
   }
 
   ngOnInit() {}
