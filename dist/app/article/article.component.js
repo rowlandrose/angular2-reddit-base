@@ -9,29 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ArticleInner = (function () {
-    function ArticleInner(title, link, votes) {
+var Article = (function () {
+    function Article(title, link, votes) {
         this.title = title;
         this.link = link;
         this.votes = votes || 0;
     }
-    ArticleInner = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'reddit-article',
-            templateUrl: 'article.component.html',
-            styleUrls: ['article.component.css'],
-            host: {
-                class: 'row'
-            }
-        }), 
-        __metadata('design:paramtypes', [String, String, Number])
-    ], ArticleInner);
-    return ArticleInner;
+    return Article;
 }());
 var ArticleComponent = (function () {
     function ArticleComponent() {
-        this.article = new ArticleInner('Angular 2', 'http://angular.io', 10);
+        this.article = new Article('Angular 2', 'http://angular.io', 10);
     }
     ArticleComponent.prototype.ngOnInit = function () { };
     ArticleComponent.prototype.voteUp = function () {
@@ -42,6 +30,18 @@ var ArticleComponent = (function () {
         this.article.votes -= 1;
         return false;
     };
+    ArticleComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'reddit-article',
+            templateUrl: 'article.component.html',
+            styleUrls: ['article.component.css'],
+            host: {
+                class: 'row'
+            }
+        }), 
+        __metadata('design:paramtypes', [])
+    ], ArticleComponent);
     return ArticleComponent;
 }());
 exports.ArticleComponent = ArticleComponent;

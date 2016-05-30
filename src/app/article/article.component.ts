@@ -1,15 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
-  moduleId: module.id,
-  selector: 'reddit-article',
-  templateUrl: 'article.component.html',
-  styleUrls: ['article.component.css'],
-  host: {
-    class: 'row'
-  }
-})
-class ArticleInner {
+class Article {
   title: string;
   link: string;
   votes: number;
@@ -20,12 +11,22 @@ class ArticleInner {
     this.votes = votes || 0;
   }
 }
+
+@Component({
+  moduleId: module.id,
+  selector: 'reddit-article',
+  templateUrl: 'article.component.html',
+  styleUrls: ['article.component.css'],
+  host: {
+    class: 'row'
+  }
+})
 export class ArticleComponent implements OnInit {
 
-  article:ArticleInner;
+  article:Article;
 
   constructor() {
-    this.article = new ArticleInner('Angular 2', 'http://angular.io', 10);
+    this.article = new Article('Angular 2', 'http://angular.io', 10);
   }
 
   ngOnInit() {}
