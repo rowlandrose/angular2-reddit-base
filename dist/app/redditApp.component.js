@@ -11,13 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var redditApp = (function () {
     function redditApp() {
-        this.title = 'redditApp works!';
-        this.names = ['Rowland', 'Lauren', 'Gianna', 'Eli', 'Jack'];
     }
     redditApp = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'redditApp',
+            selector: 'reddit',
             templateUrl: 'redditApp.component.html',
             styleUrls: ['redditApp.component.css']
         }), 
