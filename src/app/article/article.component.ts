@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
     class: 'row'
   }
 })
-export class Article implements OnInit {
+export class ArticleComponent implements OnInit {
 
   votes: number;
   title: string;
