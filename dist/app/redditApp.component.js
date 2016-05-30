@@ -12,6 +12,9 @@ var core_1 = require('@angular/core');
 var redditApp = (function () {
     function redditApp() {
     }
+    redditApp.prototype.addArticle = function (title, link) {
+        console.log("Adding article title: " + title.value + " and link: " + link.value);
+    };
     redditApp = __decorate([
         core_1.Component({
             moduleId: module.id,
