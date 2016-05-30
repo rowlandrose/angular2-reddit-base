@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
     class: 'row'
   }
 })
-export class ArticleComponent implements OnInit {
+export class Article implements OnInit {
 
   votes: number;
   title: string;
@@ -20,6 +20,8 @@ export class ArticleComponent implements OnInit {
     this.link = 'http://angular.io';
     this.votes = 10;
   }
+
+  ngOnInit() {}
 
   voteUp() {
     this.votes += 1;
