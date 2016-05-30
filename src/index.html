@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Angular2RedditBase</title>
+  <title>Angular 2 - Simple Reddit</title>
   <base href="/angular2-reddit-base/dist/">
 
   {{#unless environment.production}}
@@ -10,6 +10,10 @@
   {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
   <angular2-reddit-base-app>Loading...</angular2-reddit-base-app>
@@ -25,7 +29,7 @@
 
   
     <script>
-      function getCORS(url, success) {
+      /*function getCORS(url, success) {
         console.log('url: '+url);
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url);
@@ -37,7 +41,7 @@
         var response = request.currentTarget.response || request.target.responseText;
         console.log('response:');
         console.log(response);
-      });
+      });*/
     </script>
 
 
