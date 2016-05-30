@@ -9,27 +9,34 @@ import { Component, OnInit } from '@angular/core';
     class: 'row'
   }
 })
-export class ArticleComponent implements OnInit {
-
-  votes: number;
+class Article {
   title: string;
   link: string;
+  votes: number;
+
+  constructor(title: string, link: string, votes?: number) {
+    this.title = title;
+    this.link = link;
+    this.votes = votes || 0;
+  }
+}
+export class ArticleComponent implements OnInit {
+
+  article:Article;
 
   constructor() {
-    this.title = 'Angular 2';
-    this.link = 'http://angular.io';
-    this.votes = 10;
+    this.article = new Article('Angular 2', 'http://angular.io', 10);
   }
 
   ngOnInit() {}
 
   voteUp() {
-    this.votes += 1;
+    this.article.votes += 1;
     return false;
   }
   
   voteDown() {
-    this.votes -= 1;
+    this.article.votes -= 1;
     return false;
   }
 
