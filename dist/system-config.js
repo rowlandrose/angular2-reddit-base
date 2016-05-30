@@ -23,6 +23,7 @@ var barrels = [
     // App specific barrels.
     'app',
     'app/shared',
+    'app/article',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {
