@@ -26,4 +26,4 @@ var redditApp = (function () {
     return redditApp;
 }());
 exports.redditApp = redditApp;
-//# sourceMappingURL=redditApp.js.map
+//# sourceMappingURL=redditApp.component.js.map

@@ -5,5 +5,5 @@ var _1 = require('./app/');
 if (_1.environment.production) {
     core_1.enableProdMode();
 }
-platform_browser_dynamic_1.bootstrap(_1.Angular2RedditBaseAppComponent);
+platform_browser_dynamic_1.bootstrap(_1.redditApp);
 //# sourceMappingURL=main.js.map
