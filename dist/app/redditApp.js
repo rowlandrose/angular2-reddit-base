@@ -9,21 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Angular2RedditBaseAppComponent = (function () {
-    function Angular2RedditBaseAppComponent() {
-        this.title = 'angular2-reddit-base works!';
+var redditApp = (function () {
+    function redditApp() {
+        this.title = 'redditApp works!';
         this.names = ['Rowland', 'Lauren', 'Gianna', 'Eli', 'Jack'];
     }
-    Angular2RedditBaseAppComponent = __decorate([
+    redditApp = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'angular2-reddit-base-app',
-            templateUrl: 'angular2-reddit-base.component.html',
-            styleUrls: ['angular2-reddit-base.component.css']
+            selector: 'redditApp',
+            templateUrl: 'redditApp.component.html',
+            styleUrls: ['redditApp.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], Angular2RedditBaseAppComponent);
-    return Angular2RedditBaseAppComponent;
+    ], redditApp);
+    return redditApp;
 }());
-exports.Angular2RedditBaseAppComponent = Angular2RedditBaseAppComponent;
-//# sourceMappingURL=angular2-reddit-base.component.js.map
+exports.redditApp = redditApp;
+//# sourceMappingURL=redditApp.js.map
