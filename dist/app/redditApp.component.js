@@ -20,6 +20,7 @@ var redditApp = (function () {
             new ArticleDataService('Fullstack', 'http://fullstack.io', 2),
             new ArticleDataService('Angular Homepage', 'http://angular.io', 1),
         ];*/
+        this.articles_data = new articles_data_service_1.ArticlesDataService(this.http);
         var articles_json = this.articles_data.getArticles().subscribe(function (data) {
             for (var i = 0; i < data.data.articles.length; i++) {
                 var a = data.data.articles[i];

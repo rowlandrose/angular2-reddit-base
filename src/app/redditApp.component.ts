@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ArticleComponent } from './article/article.component';
+import {Http, Response} from '@angular/http';
 import {ArticleDataService} from './article-data.service';
 import {ArticlesDataService} from './articles-data.service';
 
@@ -15,6 +16,7 @@ export class redditApp {
 	
 	articles: ArticleDataService[];
 	articles_data: ArticlesDataService;
+	http:Http;
 
 	constructor() {
 		/*this.articles = [
@@ -22,6 +24,7 @@ export class redditApp {
 			new ArticleDataService('Fullstack', 'http://fullstack.io', 2),
 			new ArticleDataService('Angular Homepage', 'http://angular.io', 1),
 		];*/
+		this.articles_data = new ArticlesDataService(this.http);
 		let articles_json = this.articles_data.getArticles().subscribe(
 			data => {
 				for(let i = 0; i < data.data.articles.length; i++) {
