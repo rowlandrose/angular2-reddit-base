@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var article_component_1 = require('./article/article.component');
 var article_data_service_1 = require('./article-data.service');
+var articles_data_service_1 = require('./articles-data.service');
 var redditApp = (function () {
     function redditApp() {
         var _this = this;
@@ -38,7 +39,8 @@ var redditApp = (function () {
             selector: 'reddit',
             templateUrl: 'redditApp.component.html',
             styleUrls: ['redditApp.component.css'],
-            directives: [article_component_1.ArticleComponent]
+            directives: [article_component_1.ArticleComponent],
+            providers: [articles_data_service_1.ArticlesDataService]
         }), 
         __metadata('design:paramtypes', [])
     ], redditApp);
