@@ -16,7 +16,8 @@ var ArticlesDataService = (function () {
     }
     // Uses http.get() to load a single JSON file
     ArticlesDataService.prototype.getArticles = function () {
-        return this.http.get('https://dl.dropboxusercontent.com/s/8ijycefu7mabr9g/sample_data.json?dl=0').map(function (res) { return res.json(); });
+        //return this.http.get('https://dl.dropboxusercontent.com/s/8ijycefu7mabr9g/sample_data.json?dl=0').map((res:Response) => res.json());
+        return JSON.parse("\n    \t[{\n\t\t\t\"data\": {\n\t\t\t\t\"articles\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"title\":\"Angular 2\",\n\t\t\t\t\t\t\"link\":\"http://angular.io\",\n\t\t\t\t\t\t\"votes\":3\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"title\":\"Fullstack\",\n\t\t\t\t\t\t\"link\":\"ttp://fullstack.io\",\n\t\t\t\t\t\t\"votes\":16\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"title\":\"Rowland's Homepage\",\n\t\t\t\t\t\t\"link\":\"http://rowlandrose.com\",\n\t\t\t\t\t\t\"votes\":57\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}]\n    ");
     };
     ArticlesDataService = __decorate([
         core_1.Injectable(), 
