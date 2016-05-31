@@ -21,6 +21,15 @@ var ArticleDataService = (function () {
     ArticleDataService.prototype.voteDown = function () {
         this.votes -= 1;
     };
+    ArticleDataService.prototype.domain = function () {
+        try {
+            var link = this.link.split('//')[1];
+            return link.split('/')[0];
+        }
+        catch (err) {
+            return null;
+        }
+    };
     ArticleDataService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [String, String, Number])

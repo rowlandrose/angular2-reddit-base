@@ -21,6 +21,9 @@ var redditApp = (function () {
     }
     redditApp.prototype.addArticle = function (title, link) {
         console.log("Adding article title: " + title.value + " and link: " + link.value);
+        this.articles.push(new article_data_service_1.ArticleDataService(title.value, link.value, 0));
+        title.value = '';
+        link.value = '';
     };
     redditApp = __decorate([
         core_1.Component({
