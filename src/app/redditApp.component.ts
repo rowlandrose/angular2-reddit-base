@@ -25,18 +25,13 @@ export class redditApp {
 			new ArticleDataService('Angular Homepage', 'http://angular.io', 1),
 		];*/
 		this.articles_data = new ArticlesDataService(this.http);
-		let articles_json = this.articles_data.getArticles().subscribe(
-			data => {
-				for(let i = 0; i < data.data.articles.length; i++) {
-					let a = data.data.articles[i];
-					this.articles.push(
-						new ArticleDataService(a.title, a.link, a.votes)
-					);
-				}
-			},
-			err => { alert('error') }
-		);
-		
+		let articles_json = this.articles_data.getArticles();
+		for(let i = 0; i < articles_json.data.articles.length; i++) {
+			let a = articles_json.data.articles[i];
+			this.articles.push(
+				new ArticleDataService(a.title, a.link, a.votes)
+			);
+		}
 	}
 
 	addArticle(title: HTMLInputElement, link: HTMLInputElement): void {

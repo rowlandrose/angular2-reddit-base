@@ -14,19 +14,17 @@ var article_data_service_1 = require('./article-data.service');
 var articles_data_service_1 = require('./articles-data.service');
 var redditApp = (function () {
     function redditApp() {
-        var _this = this;
         /*this.articles = [
             new ArticleDataService('Angular 2', 'http://angular.io', 3),
             new ArticleDataService('Fullstack', 'http://fullstack.io', 2),
             new ArticleDataService('Angular Homepage', 'http://angular.io', 1),
         ];*/
         this.articles_data = new articles_data_service_1.ArticlesDataService(this.http);
-        var articles_json = this.articles_data.getArticles().subscribe(function (data) {
-            for (var i = 0; i < data.data.articles.length; i++) {
-                var a = data.data.articles[i];
-                _this.articles.push(new article_data_service_1.ArticleDataService(a.title, a.link, a.votes));
-            }
-        }, function (err) { alert('error'); });
+        var articles_json = this.articles_data.getArticles();
+        for (var i = 0; i < articles_json.data.articles.length; i++) {
+            var a = articles_json.data.articles[i];
+            this.articles.push(new article_data_service_1.ArticleDataService(a.title, a.link, a.votes));
+        }
     }
     redditApp.prototype.addArticle = function (title, link) {
         console.log("Adding article title: " + title.value + " and link: " + link.value);
