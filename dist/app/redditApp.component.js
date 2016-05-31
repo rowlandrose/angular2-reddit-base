@@ -10,8 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var article_component_1 = require('./article/article.component');
+var article_data_service_1 = require('./article-data.service');
 var redditApp = (function () {
     function redditApp() {
+        this.articles = [
+            new article_data_service_1.ArticleDataService('Angular 2', 'http://angular.io', 3),
+            new article_data_service_1.ArticleDataService('Fullstack', 'http://fullstack.io', 2),
+            new article_data_service_1.ArticleDataService('Angular Homepage', 'http://angular.io', 1),
+        ];
     }
     redditApp.prototype.addArticle = function (title, link) {
         console.log("Adding article title: " + title.value + " and link: " + link.value);

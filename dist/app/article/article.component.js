@@ -9,26 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Article = (function () {
-    function Article(title, link, votes) {
-        this.title = title;
-        this.link = link;
-        this.votes = votes || 0;
-    }
-    Article.prototype.voteUp = function () {
-        this.votes += 1;
-    };
-    Article.prototype.voteDown = function () {
-        this.votes -= 1;
-    };
-    return Article;
-}());
 var ArticleComponent = (function () {
     function ArticleComponent() {
     }
-    ArticleComponent.prototype.ngOnInit = function () {
-        this.article = new Article('Angular 2', 'http://angular.io', 10);
-    };
+    ArticleComponent.prototype.ngOnInit = function () { };
     ArticleComponent.prototype.voteUp = function () {
         this.article.voteUp();
         return false;
@@ -41,6 +25,7 @@ var ArticleComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'reddit-article',
+            inputs: ['article'],
             templateUrl: 'article.component.html',
             styleUrls: ['article.component.css'],
             host: {

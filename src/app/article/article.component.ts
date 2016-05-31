@@ -1,28 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
-class Article {
-  title: string;
-  link: string;
-  votes: number;
-
-  constructor(title: string, link: string, votes?: number) {
-    this.title = title;
-    this.link = link;
-    this.votes = votes || 0;
-  }
-
-  voteUp(): void {
-    this.votes += 1;
-  }
-  
-  voteDown(): void {
-    this.votes -= 1;
-  }
-}
+import {ArticleDataService} from '../article-data.service';
 
 @Component({
   moduleId: module.id,
   selector: 'reddit-article',
+  inputs: ['article'],
   templateUrl: 'article.component.html',
   styleUrls: ['article.component.css'],
   host: {
@@ -31,13 +13,9 @@ class Article {
 })
 export class ArticleComponent implements OnInit {
 
-  article:Article;
+  article:ArticleDataService;
 
-  constructor() {}
-
-  ngOnInit() {
-    this.article = new Article('Angular 2', 'http://angular.io', 10);
-  }
+  ngOnInit() {}
 
   voteUp(): boolean {
     this.article.voteUp();
