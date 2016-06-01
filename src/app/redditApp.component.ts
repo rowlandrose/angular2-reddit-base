@@ -8,7 +8,8 @@ import {ArticleDataService} from './article-data.service';
   selector: 'reddit',
   templateUrl: 'redditApp.component.html',
   styleUrls: ['redditApp.component.css'],
-  directives: [ArticleComponent]
+  directives: [ArticleComponent],
+  providers: [ArticleDataService]
 })
 export class redditApp {
 	
@@ -19,9 +20,9 @@ export class redditApp {
 
 		this.articles_data = [];
 
-		/*this._articleDataService.getArticles().subscribe(
+		this._articleDataService.getArticles().subscribe(
 			result => this.articlesLoaded(result)
-		);*/
+		);
 
 		this.articles = [
 			new ArticleModel('Angular 2', 'http://angular.io', 3),
