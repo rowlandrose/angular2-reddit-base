@@ -19,9 +19,9 @@ export class redditApp {
 
 		this.articles_data = [];
 
-		this._articleDataService.getArticles().subscribe(
+		/*this._articleDataService.getArticles().subscribe(
 			result => this.articlesLoaded(result)
-		);
+		);*/
 
 		this.articles = [
 			new ArticleModel('Angular 2', 'http://angular.io', 3),
