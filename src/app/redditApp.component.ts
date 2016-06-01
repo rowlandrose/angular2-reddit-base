@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ArticleComponent } from './article/article.component';
 import {ArticleModel} from './article-model.directive';
+import {ArticleDataService} from './article-data.service';
 
 @Component({
   moduleId: module.id,
@@ -12,13 +13,26 @@ import {ArticleModel} from './article-model.directive';
 export class redditApp {
 	
 	articles: ArticleModel[];
+	articles_data;
 
-	constructor() {
+	constructor(private _articleDataService: ArticleDataService) {
+
+		this.articles_data = [];
+
+		this._articleDataService.getArticles().subscribe(
+			result => this.articlesLoaded(result)
+		);
+
 		this.articles = [
 			new ArticleModel('Angular 2', 'http://angular.io', 3),
 			new ArticleModel('Fullstack', 'http://fullstack.io', 2),
 			new ArticleModel('Angular Homepage', 'http://angular.io', 1),
 		];
+	}
+
+	articlesLoaded(result) {
+
+		console.log(result);
 	}
 
 	addArticle(title: HTMLInputElement, link: HTMLInputElement): void {

@@ -9,30 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+require('rxjs/Rx');
 var ArticleDataService = (function () {
-    function ArticleDataService(title, link, votes) {
-        this.title = title;
-        this.link = link;
-        this.votes = votes || 0;
+    function ArticleDataService(http) {
+        this.http = http;
+        this._url = 'http://www.rowlandrose.com/experiments/angular2-reddit-base/';
     }
-    ArticleDataService.prototype.voteUp = function () {
-        this.votes += 1;
-    };
-    ArticleDataService.prototype.voteDown = function () {
-        this.votes -= 1;
-    };
-    ArticleDataService.prototype.domain = function () {
-        try {
-            var link = this.link.split('//')[1];
-            return link.split('/')[0];
-        }
-        catch (err) {
-            return null;
-        }
+    ArticleDataService.prototype.getArticles = function () {
+        return this.http.get(this._url)
+            .map(function (response) { return response.json(); });
     };
     ArticleDataService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [String, String, Number])
+        __metadata('design:paramtypes', [http_1.Http])
     ], ArticleDataService);
     return ArticleDataService;
 }());

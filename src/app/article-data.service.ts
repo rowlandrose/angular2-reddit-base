@@ -1,33 +1,16 @@
 import { Injectable } from '@angular/core';
+import {Http, Response} from '@angular/http';
+import 'rxjs/Rx';
 
 @Injectable()
 export class ArticleDataService {
 
-  title: string;
-  link: string;
-  votes: number;
+	private _url = 'http://www.rowlandrose.com/experiments/angular2-reddit-base/';
+	
+	constructor(private http: Http) { }
 
-  constructor(title: string, link: string, votes?: number) {
-    this.title = title;
-    this.link = link;
-    this.votes = votes || 0;
-  }
-
-  voteUp(): void {
-    this.votes += 1;
-  }
-  
-  voteDown(): void {
-    this.votes -= 1;
-  }
-
-  domain(): string {
-    try {
-      const link: string = this.link.split('//')[1];
-      return link.split('/')[0];
-    } catch (err) {
-      return null;
-    }
-  }
-
+	getArticles() {
+		return this.http.get(this._url)
+			.map(response => response.json());
+	}
 }
