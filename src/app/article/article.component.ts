@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ArticleDataService} from '../article-data.service';
+import {ArticleModel} from '../article-model.directive';
 
 @Component({
   moduleId: module.id,
@@ -13,7 +13,7 @@ import {ArticleDataService} from '../article-data.service';
 })
 export class ArticleComponent implements OnInit {
 
-  article:ArticleDataService;
+  article:ArticleModel;
 
   ngOnInit() {}
 
