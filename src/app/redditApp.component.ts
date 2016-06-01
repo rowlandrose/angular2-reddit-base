@@ -16,22 +16,13 @@ export class redditApp {
 	articles: ArticleModel[];
 	articles_data;
 
-	/*constructor(private _articleDataService: ArticleDataService) {
+	constructor(private _articleDataService: ArticleDataService) {
 
 		this.articles_data = [];
 
 		this._articleDataService.getArticles().subscribe(
 			result => this.articlesLoaded(result)
 		);
-
-		this.articles = [
-			new ArticleModel('Angular 2', 'http://angular.io', 3),
-			new ArticleModel('Fullstack', 'http://fullstack.io', 2),
-			new ArticleModel('Angular Homepage', 'http://angular.io', 1),
-		];
-	}*/
-
-	constructor() {
 
 		this.articles = [
 			new ArticleModel('Angular 2', 'http://angular.io', 3),

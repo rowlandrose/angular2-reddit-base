@@ -13,21 +13,11 @@ var article_component_1 = require('./article/article.component');
 var article_model_directive_1 = require('./article-model.directive');
 var article_data_service_1 = require('./article-data.service');
 var redditApp = (function () {
-    /*constructor(private _articleDataService: ArticleDataService) {
-
+    function redditApp(_articleDataService) {
+        var _this = this;
+        this._articleDataService = _articleDataService;
         this.articles_data = [];
-
-        this._articleDataService.getArticles().subscribe(
-            result => this.articlesLoaded(result)
-        );
-
-        this.articles = [
-            new ArticleModel('Angular 2', 'http://angular.io', 3),
-            new ArticleModel('Fullstack', 'http://fullstack.io', 2),
-            new ArticleModel('Angular Homepage', 'http://angular.io', 1),
-        ];
-    }*/
-    function redditApp() {
+        this._articleDataService.getArticles().subscribe(function (result) { return _this.articlesLoaded(result); });
         this.articles = [
             new article_model_directive_1.ArticleModel('Angular 2', 'http://angular.io', 3),
             new article_model_directive_1.ArticleModel('Fullstack', 'http://fullstack.io', 2),
@@ -52,7 +42,7 @@ var redditApp = (function () {
             directives: [article_component_1.ArticleComponent],
             providers: [article_data_service_1.ArticleDataService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [article_data_service_1.ArticleDataService])
     ], redditApp);
     return redditApp;
 }());
