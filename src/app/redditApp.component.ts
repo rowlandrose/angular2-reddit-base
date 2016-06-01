@@ -21,7 +21,7 @@ export class redditApp {
 		this.articles_data = [];
 
 		this._articleDataService.getArticles().subscribe(
-			result => alert(result)
+			result => this.articlesLoaded(result)
 		);
 
 		this.articles = [
@@ -34,6 +34,7 @@ export class redditApp {
 	articlesLoaded(result) {
 
 		console.log(result);
+		alert(result);
 	}
 
 	addArticle(title: HTMLInputElement, link: HTMLInputElement): void {
