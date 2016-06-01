@@ -14,11 +14,10 @@ import {ArticleDataService} from './article-data.service';
 export class redditApp {
 	
 	articles: ArticleModel[];
-	articles_data;
 
 	constructor(private _articleDataService: ArticleDataService) {
 
-		this.articles_data = [];
+		this.articles = [];
 
 		this._articleDataService.getArticles().subscribe(
 			result => this.articlesLoaded(result)

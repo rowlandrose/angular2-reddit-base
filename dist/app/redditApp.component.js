@@ -16,7 +16,7 @@ var redditApp = (function () {
     function redditApp(_articleDataService) {
         var _this = this;
         this._articleDataService = _articleDataService;
-        this.articles_data = [];
+        this.articles = [];
         this._articleDataService.getArticles().subscribe(function (result) { return _this.articlesLoaded(result); });
     }
     redditApp.prototype.articlesLoaded = function (result) {
