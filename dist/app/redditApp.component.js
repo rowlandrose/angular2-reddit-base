@@ -25,8 +25,10 @@ var redditApp = (function () {
         ];
     }
     redditApp.prototype.articlesLoaded = function (result) {
-        console.log(result);
-        alert(result);
+        for (var i = 0; i < result.data.articles.length; i++) {
+            var a = result.data.articles[i];
+            this.articles.push(new article_model_directive_1.ArticleModel(a.title, a.link, a.votes));
+        }
     };
     redditApp.prototype.addArticle = function (title, link) {
         console.log("Adding article title: " + title.value + " and link: " + link.value);

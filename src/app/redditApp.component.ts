@@ -33,8 +33,10 @@ export class redditApp {
 
 	articlesLoaded(result) {
 
-		console.log(result);
-		alert(result);
+		for (let i = 0; i < result.data.articles.length; i++) {
+			let a = result.data.articles[i];
+			this.articles.push(new ArticleModel(a.title, a.link, a.votes));
+		}
 	}
 
 	addArticle(title: HTMLInputElement, link: HTMLInputElement): void {
