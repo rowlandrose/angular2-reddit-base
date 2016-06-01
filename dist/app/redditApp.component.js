@@ -39,8 +39,7 @@ var redditApp = (function () {
             selector: 'reddit',
             templateUrl: 'redditApp.component.html',
             styleUrls: ['redditApp.component.css'],
-            directives: [article_component_1.ArticleComponent],
-            providers: [article_data_service_1.ArticleDataService]
+            directives: [article_component_1.ArticleComponent]
         }), 
         __metadata('design:paramtypes', [article_data_service_1.ArticleDataService])
     ], redditApp);

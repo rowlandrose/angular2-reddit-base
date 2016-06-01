@@ -8,8 +8,7 @@ import {ArticleDataService} from './article-data.service';
   selector: 'reddit',
   templateUrl: 'redditApp.component.html',
   styleUrls: ['redditApp.component.css'],
-  directives: [ArticleComponent],
-  providers: [ArticleDataService]
+  directives: [ArticleComponent]
 })
 export class redditApp {
 	
