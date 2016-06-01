@@ -21,7 +21,7 @@ export class redditApp {
 		this.articles_data = [];
 
 		this._articleDataService.getArticles().subscribe(
-			result => this.articlesLoaded(result)
+			result => alert(result)
 		);
 
 		this.articles = [
